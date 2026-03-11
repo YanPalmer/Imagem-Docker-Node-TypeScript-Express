@@ -1,5 +1,9 @@
 # Passos para inicialização de um servidor Node.js com TypeScript e Express
 
+## Requisitos
+### Node.js instalado
+### VSCode
+
 (Básico)
 # 1. Crie um repositório local e no github e crie este arquivo README.md
 # 2. Abra o terminal e insira os seguintes comandos:
@@ -39,3 +43,12 @@ Etc...
 ## npm run dev
 # 6. No seu navegador pesquise por: localhost:3000 (ou a porta que você definiu em "port")
 ## Para cancelar, no terminal aperte CTRL + C
+
+(Iniciante) - Servindo arquivos estáticos
+# 1. Na pasta principal crie uma pasta chamada public/, dentro crie um arquivo index.html e no VSCode digite ! e tecle enter para auto gerar um documento html
+# 2. Dentro preencha o body com alguma informação como por exemplo: <h1>Hello, World!</h1>
+# 3. Para que o express possa usar os arquivos dentro da pasta public/ insira abaixo do app.use(Express.json()) o seguinte código:
+app.use(Express.json()); ---
+app.use(Express.static("public")); //insira aqui
+## Obs: Por padrão ao servir a página public/, se existir um arquivo de nome "index" ele é executado com prioridade. Então o seu sistema executa rapidamente a página '/' e em seguida prioriza public/index.html
+## Se quiser ver a diferença substitua index.html por teste.html, execute o código novamente e em seguida vá na barra de pesquisa e digite: localhost:3000/teste.html. Você verá que foi redirecionado para o arquivo não prioritário.

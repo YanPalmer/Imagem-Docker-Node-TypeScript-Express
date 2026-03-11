@@ -2,6 +2,7 @@ import Express = require("express");
 
 const app = Express();
 app.use(Express.json());
+app.use(Express.static("public"));
 
 app.get('/', (req, res) => {
   res.send('Servidor rodando com TypeScript!');
